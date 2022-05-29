@@ -1,0 +1,13 @@
+.Greetings
+{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+
+}
+
+.MyH1
+{
+  color: blue;
+}
