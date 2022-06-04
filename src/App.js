@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import ItemListContainer from './components/itemList/ItemListContainer';
+import ItemListContainer from './components/itemListFolder/ItemListContainer';
 import MUNavBar from './components/MUNavBar';
 import ItemCount from './components/ItemCount';
 
