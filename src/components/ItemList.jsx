@@ -4,7 +4,7 @@ import Item from './Item'
 const ItemList = ({producto}) => {
   return (
 
-    <div >
+    <div style={{display: "flex", flexWrap: "wrap", flexDirection: "row" }}>
         {producto.map(prod => <Item key={prod.id} prod={prod}/>)}
        
     </div>
@@ -12,3 +12,4 @@ const ItemList = ({producto}) => {
 }
 
 export default ItemList
+

@@ -10,7 +10,7 @@ const {modelo, personaje, tipo, img } = prod
 
   return (
     <Card style={{ width: '20rem' }}>
-  <Card.Img variant="top" src={img} />
+  <Card.Img style={{weight: '270px', height: '270px'}} variant="top" src={img} />
   <Card.Body>
     <Card.Title>{personaje}</Card.Title>
     <Card.Text>
