@@ -13,8 +13,12 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
+import Home from './pages/Home';
 
-const pages = ['Home', 'Productos', 'Contacto'];
+
+
+const pages = ["Home", 'Remeras','Tazas', 'Gorras', 'Contacto' ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const MUNavBar = () => {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
@@ -6,6 +7,9 @@ const ItemDetailContainer = () => {
 
   const [errorDetail, seterrorDetail] = useState(false)
   const [detail, setDetail] = useState([])
+const {id} = useParams()
+
+
 
   useEffect(() => {
 
@@ -16,8 +20,11 @@ const ItemDetailContainer = () => {
 
         res(
           { modelo: "Simpsons", personaje: "Barney Gomez", id: 20, tipo: "Remera", precio: "$1500", descripcion: "Remera de algodón con escote redondo lisa, levemente ajustada en la cintura. Calce regular. 100% Algodón.",
-        img: "https://http2.mlstatic.com/D_NQ_NP_743866-MLA47327728756_092021-W.jpg"});
+        img: "https://http2.mlstatic.com/D_NQ_NP_743866-MLA47327728756_092021-W.jpg"})
 
+        if (id == 20){
+          setDetail ({ modelo: "Simpsons", personaje: "Barney Gomez", id: 20, tipo: "Remera", precio: "$1500"})
+        }
 
         rej('No existe el producto');
 
@@ -38,7 +45,7 @@ const ItemDetailContainer = () => {
 
 
 
-}, []);
+}, [id]);
 
 console.log(detail)
 
