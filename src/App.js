@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from './components/ItemDetailContainer';
 import BSTNavbar from './components/BSTNavBar';
 import TestEventos from './components/TestEventos';
+import Cart from './components/Cart';
 
 
 
@@ -35,6 +36,7 @@ const onAdd = (count) => {
   <Route path='/categoria/:id' element={<ItemListContainer/>}></Route>
   <Route path='/item/:id' element={<ItemDetailContainer/>}></Route>
 <Route path='/testeventos' element={<TestEventos/>}></Route>
+<Route path='/cart' element={<Cart/>}></Route>
 </Routes>
 </BrowserRouter>
 

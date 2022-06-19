@@ -1,13 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from 'react-router-dom';
+import ItemCount from './ItemCount';
+
+
+
 
 
 
 
 
 const ItemDetail = ({detalle}) => {
+
+  const [mostrarItemC, setMostrarItemC] = useState (true)
+
+  const onAdd = (count) => {
+  
+    alert(`Agregaste ${count} productos al carrito`)
+   setMostrarItemC(false)
+  
+  }
+  
+
 
   const {modelo, personaje, tipo, img, precio, descripcion } = detalle
 
@@ -23,10 +38,12 @@ const ItemDetail = ({detalle}) => {
     <ListGroup className="list-group-flush">
       <ListGroup.Item>Modelo: {detalle.modelo}</ListGroup.Item>
       <ListGroup.Item>Precio: {detalle.precio}</ListGroup.Item>
-
+{mostrarItemC ? <ItemCount initial={1}  max = {10} onAdd = {onAdd}/> :  <Card.Body>
+  <div> <Link to ="/cart" >Finalizar mi compra</Link></div>
+</Card.Body>};
     </ListGroup>
     <Card.Body>
-      <Card.Link href="#">HOME</Card.Link>
+      <div> <Link to ="/" >Volver a Home</Link></div>
     </Card.Body>
   </Card>
   )
