@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
+import {CartContext} from './Context/CartContext'
 
 
 
@@ -13,13 +14,21 @@ import ItemCount from './ItemCount';
 
 const ItemDetail = ({detalle}) => {
 
+
+
   const [mostrarItemC, setMostrarItemC] = useState (true)
+
+  const {isInCart, addItem} = useContext(CartContext)
+  
+
 
   const onAdd = (count) => {
   
     alert(`Agregaste ${count} productos al carrito`)
    setMostrarItemC(false)
-  
+  isInCart(detalle.id)
+addItem(detalle, count)
+
   }
   
 
@@ -30,7 +39,7 @@ const ItemDetail = ({detalle}) => {
     <Card style={{ width: '18rem' }}>
     <Card.Img variant="top" src={detalle.img} />
     <Card.Body>
-      <Card.Title>Remera: {detalle.personaje}</Card.Title>
+      <Card.Title>{detalle.personaje}</Card.Title>
       <Card.Text>
       {detalle.descripcion}
       </Card.Text>

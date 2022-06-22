@@ -131,7 +131,7 @@ const MUNavBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <CartWidget product={4}/>
+            <CartWidget product={getItemQty()}/>
           </Box>
         </Toolbar>
       </Container>

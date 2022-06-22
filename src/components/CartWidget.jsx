@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
-function CartWidget({product}) {
+
+import {CartContext} from './Context/CartContext'
+
+
+
+function CartWidget() {
+
+const {getItemQty} = useContext(CartContext)
   return (
     <>
     <ShoppingCartCheckoutIcon />
-    {product}
+    {getItemQty()}
     </>
   )
 }
