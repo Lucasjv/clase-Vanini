@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const Item = ({prod}) => {
 
-const {modelo, personaje, tipo, img } = prod
+const { personaje, img, category, precio, stock } = prod
 
 
 
@@ -15,9 +15,9 @@ const {modelo, personaje, tipo, img } = prod
   <Card.Body>
     <Card.Title>{personaje}</Card.Title>
     <Card.Text>
-     Producto: {tipo}
+     Producto: {category}
      <br />
-     Categoría: {modelo}
+     Precio: ${precio}
     </Card.Text>
     <Button variant="secondary"> <Link to = "./item/:id" >Ver Detalles.</Link>   </Button>  
   </Card.Body>

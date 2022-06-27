@@ -9,12 +9,28 @@ import TestEventos from './components/TestEventos';
 import Cart from './components/Cart';
 import MyProvider from './components/Context/CartContext';
 
-
+import { initializeApp } from "firebase/app";
 
 
 function App() {
 
+// Import the functions you need from the SDKs you need
 
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBBveIYgoYfJKubJe5pI0TyQnR31MGG1IQ",
+  authDomain: "simpsontienda-f64da.firebaseapp.com",
+  projectId: "simpsontienda-f64da",
+  storageBucket: "simpsontienda-f64da.appspot.com",
+  messagingSenderId: "1000718794315",
+  appId: "1:1000718794315:web:9493690a80f07083a917ce"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
 
 

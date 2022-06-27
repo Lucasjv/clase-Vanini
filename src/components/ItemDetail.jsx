@@ -8,45 +8,43 @@ import {CartContext} from './Context/CartContext'
 
 
 
+const ItemDetail = ({detalles}) => {
 
-
-
-
-const ItemDetail = ({detalle}) => {
-
+  const {category, personaje, description, img, precio, stock, id } = detalles
 
 
   const [mostrarItemC, setMostrarItemC] = useState (true)
 
   const {isInCart, addItem} = useContext(CartContext)
   
+  console.log(detalles)
 
 
   const onAdd = (count) => {
   
     alert(`Agregaste ${count} productos al carrito`)
    setMostrarItemC(false)
-  isInCart(detalle.id)
-addItem(detalle, count)
+  isInCart()
+addItem(detalles, count)
+
+
+
+
 
   }
-  
-
-
-  const {modelo, personaje, tipo, img, precio, descripcion } = detalle
 
   return (
     <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src={detalle.img} />
+    <Card.Img variant="top" src={img} />
     <Card.Body>
-      <Card.Title>{detalle.personaje}</Card.Title>
+      <Card.Title>{personaje}</Card.Title>
       <Card.Text>
-      {detalle.descripcion}
+      {description}
       </Card.Text>
     </Card.Body>
     <ListGroup className="list-group-flush">
-      <ListGroup.Item>Modelo: {detalle.modelo}</ListGroup.Item>
-      <ListGroup.Item>Precio: {detalle.precio}</ListGroup.Item>
+      <ListGroup.Item>Modelo: {category}</ListGroup.Item>
+      <ListGroup.Item>Precio: $  {precio}</ListGroup.Item>
 {mostrarItemC ? <ItemCount initial={1}  max = {10} onAdd = {onAdd}/> :  <Card.Body>
   <div> <Link to ="/cart" >Finalizar mi compra</Link></div>
 </Card.Body>};
