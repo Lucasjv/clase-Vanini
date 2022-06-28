@@ -44,7 +44,7 @@ console.log(detail)
 return (
   
   <div>
-  { detail && <ItemDetail detalles = {detail}/>}
+  { <ItemDetail detalles = {detail}/>}
   </div>
 
 )

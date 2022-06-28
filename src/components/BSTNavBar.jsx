@@ -8,16 +8,21 @@ import { Link } from 'react-router-dom';
 
 function BSTNavBar() {
   return (
-    <Navbar bg="primary" variant="dark">
+    <Navbar bg="secondary" variant="light">
     <Container>
-      <Navbar.Brand href="/">Home</Navbar.Brand>
+    
+      <Link to  ="/">Home</Link> 
       <Nav className="me-auto">
-        <Nav.Link href="/categoria/remera">Remeras</Nav.Link>
-        <Nav.Link href="/categoria/taza">Tazas</Nav.Link>
-        <Nav.Link href="/categoria/gorra">Gorras</Nav.Link>
-        <Nav.Link href="/categoria/remera">Contacto</Nav.Link>
+       
+        <Link to  = "/categoria/remera" >Remeras</Link> 
+     
+        <Link to = "/categoria/taza" >Tazas</Link> 
+     
+        <Link to = "/categoria/gorra" >Gorras</Link> 
+  
+    
       </Nav>
-      <CartWidget product={4}/>
+     <Link to= "/cart"> <CartWidget product={4}/></Link>
     </Container>
   </Navbar>
   );
