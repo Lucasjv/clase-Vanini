@@ -49,9 +49,6 @@ const app = initializeApp(firebaseConfig);
   <Route path='/' element={<ItemListContainer/> }></Route>
   <Route path='/categoria/:id' element={<ItemListContainer/>}></Route>
   <Route path='/item/:id' element={<ItemDetailContainer/>}></Route>
-  <Route path='/categoria/remera/item/:id' element={<ItemDetailContainer/>}></Route>
-  <Route path='/categoria/gorra/item/:id' element={<ItemDetailContainer/>}></Route>
-  <Route path='/categoria/taza/item/:id' element={<ItemDetailContainer/>}></Route>
 <Route path='/testeventos' element={<TestEventos/>}></Route>
 <Route path='/cart' element={<Cart/>}></Route>
 </Routes>

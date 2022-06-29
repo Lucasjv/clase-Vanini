@@ -4,7 +4,7 @@ import { CartContext } from './Context/CartContext';
 import './StylesComponent.css/Cart.css';
 
 export default function Cart() {
-  const {cart, emptyCart, getCartTotal, removeFromCart} = useContext(CartContext);
+  const {cart, emptyCart, isInCart, addItem, deleteItem, getItemPrice, getItemQty} = useContext(CartContext);
   const carritoVacio = cart.length === 0;
 
   return (
@@ -33,20 +33,20 @@ export default function Cart() {
         cart.map(item => (
           <tr className="cart-item" key={item.id}>
             <td className="cart-item-img">
-              <img src={item.thumbnail} alt={item.name} />
+              <img src={item.img} alt={item.personaje} />
             </td>
             <td className="cart-item-title">
-              {item.title}
+              {item.personaje}
             </td>
-            <td className="cart-item-price">${item.price}</td>
+            <td className="cart-item-price">${item.precio}</td>
             <td className="cart-item-qty">
               {item.count}
             </td>
             <td className="cart-item-total">
-              ${item.price * item.count}
+              ${item.precio * item.count}
             </td>
             <td className="cart-item-remove">
-              <button className="botonPrincipal" onClick={() => removeFromCart(item.id)}>
+              <button className="botonPrincipal" onClick={() => deleteItem(item.id)}>
                 X
               </button>
             </td>
@@ -60,7 +60,7 @@ export default function Cart() {
           <Link to="/"><button className="botonPrincipal">Volver al inicio</button></Link>
           :
           <>
-          <h3>Total: ${getCartTotal()}</h3>
+          <h3>Total: ${getItemQty()}</h3>
           <Link to="/cart"><button className="botonPrincipal">Continuar al Pago</button></Link>
           <button className="botonPrincipal" onClick={emptyCart}>Vaciar Carrito</button>
           </>

@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
 
 const [loading, setLoading] = useState(true);
   const [errorDetail, seterrorDetail] = useState(false);
-  const [detail, setDetail] = useState([]);
+  const [detail, setDetail] = useState({});
 const {id} = useParams();
 
 
@@ -21,9 +21,9 @@ const {id} = useParams();
 const db = getFirestore();
 const productRef = doc(db, 'Productos', id);
 
-getDoc(productRef).then((snapschot) => {
+getDoc(productRef).then((snapshot) => {
 
-  setDetail({...snapschot.data(), id: snapschot.id});
+  setDetail({...snapshot.data(), id: snapshot.id});
   
 
 
@@ -39,7 +39,7 @@ getDoc(productRef).then((snapschot) => {
 
 
 console.log(detail)
-
+console.log(id)
 
 return (
   

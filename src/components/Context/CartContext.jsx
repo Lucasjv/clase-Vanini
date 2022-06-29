@@ -50,7 +50,7 @@ setCart(auxArray)
     }
 
 
-    return <Provider value ={{cart, isInCart, addItem, deleteItem, getItemPrice, getItemQty}}>{children}</Provider>
+    return <Provider value ={{cart, isInCart, addItem, deleteItem, getItemPrice, getItemQty, emptyCart}}>{children}</Provider>
 }
 
 export default MyProvider
