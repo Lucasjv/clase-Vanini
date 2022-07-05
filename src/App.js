@@ -8,8 +8,9 @@ import BSTNavbar from './components/BSTNavBar';
 import TestEventos from './components/TestEventos';
 import Cart from './components/Cart';
 import MyProvider from './components/Context/CartContext';
-
+import FBCheckOut from './components/FBCheckOut';
 import { initializeApp } from "firebase/app";
+import CheckOut from './components/CheckOut';
 
 
 function App() {
@@ -51,6 +52,8 @@ const app = initializeApp(firebaseConfig);
   <Route path='/item/:id' element={<ItemDetailContainer/>}></Route>
 <Route path='/testeventos' element={<TestEventos/>}></Route>
 <Route path='/cart' element={<Cart/>}></Route>
+<Route path='/checkout' element={<FBCheckOut/>}></Route>
+<Route path='/exit' element={<CheckOut/>}></Route>
 </Routes>
 
 </MyProvider>

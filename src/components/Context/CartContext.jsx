@@ -41,8 +41,16 @@ setCart(auxArray)
     const deleteItem = (id) => {
         return setCart.filter (x => x.id !== id)
     }
+
+    const removeFromCart = (id) => {
+        const newCart = cart.filter(item => item.id !== id);
+        setCart(newCart);
+    }
+
     const getItemQty = () => {
         return cart.reduce((acc, x) => acc += x.count, 0 )
+
+
 
     }
     const getItemPrice = () => {
@@ -50,7 +58,7 @@ setCart(auxArray)
     }
 
 
-    return <Provider value ={{cart, isInCart, addItem, deleteItem, getItemPrice, getItemQty, emptyCart}}>{children}</Provider>
+    return <Provider value ={{cart, isInCart, addItem, deleteItem, getItemPrice, getItemQty, emptyCart, removeFromCart}}>{children}</Provider>
 }
 
 export default MyProvider

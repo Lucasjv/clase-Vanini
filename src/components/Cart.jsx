@@ -4,7 +4,7 @@ import { CartContext } from './Context/CartContext';
 import './StylesComponent.css/Cart.css';
 
 export default function Cart() {
-  const {cart, emptyCart, isInCart, addItem, deleteItem, getItemPrice, getItemQty} = useContext(CartContext);
+  const {cart, emptyCart, isInCart, addItem, deleteItem, getItemPrice, getItemQty, removeFromCart} = useContext(CartContext);
   const carritoVacio = cart.length === 0;
 
   return (
@@ -46,7 +46,7 @@ export default function Cart() {
               ${item.precio * item.count}
             </td>
             <td className="cart-item-remove">
-              <button className="botonPrincipal" onClick={() => deleteItem(item.id)}>
+              <button className="botonPrincipal" onClick={() => removeFromCart(item.id)}>
                 X
               </button>
             </td>
@@ -60,8 +60,8 @@ export default function Cart() {
           <Link to="/"><button className="botonPrincipal">Volver al inicio</button></Link>
           :
           <>
-          <h3>Total: ${getItemQty()}</h3>
-          <Link to="/cart"><button className="botonPrincipal">Continuar al Pago</button></Link>
+          <h3>Total: ${getItemPrice()}</h3>
+          <Link to="/checkout"><button className="botonPrincipal">Continuar al checkout</button></Link>
           <button className="botonPrincipal" onClick={emptyCart}>Vaciar Carrito</button>
           </>
       }
