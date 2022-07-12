@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { CartContext } from './Context/CartContext';
-import {addDoc, collection, getFirestore, doc, getDoc} from 'firebase/firestore';
+import {addDoc, collection, getFirestore,} from 'firebase/firestore';
 import {Link} from 'react-router-dom';
 
 
@@ -20,7 +20,7 @@ const {cart, getItemPrice} = useContext(CartContext)
     
 
     function handleclick() {
-        console.log( "Data Cliente: ", name, cel, mail);
+        
 
         const order = {
 
@@ -29,14 +29,26 @@ const {cart, getItemPrice} = useContext(CartContext)
            total: getItemPrice(),
 
         }
-        console.log(order);
+      
         if( !name || !mail || !cel) return;
 
         addDoc(orderCollection, order).then(({id})=>{
-          console.log(id)
+          
         });
 
       }
+      function validateform(){  
+        var name=document.myform.name.value;  
+        var password=document.myform.password.value;  
+          
+        if (name==null || name==""){  
+          alert("Nombre y Apellido no puede estar en blanco");  
+          return false;  
+        }else if(password.length<6){  
+          alert("La contraseña al menos debe tener 6 caracteres");  
+          return false;  
+          }  
+        }  
 
   return (
 <>
@@ -71,7 +83,7 @@ const {cart, getItemPrice} = useContext(CartContext)
       </Form.Group>
 
 
-      <Button  onClick={() => handleclick()} variant="primary"> <Link to={'/exit'}>
+      <Button style={{ color: "white" }} onClick={() => handleclick() && validateform()}  variant="secondary"> <Link to={'/exit'}>
         Validar mis datos.</Link>
       </Button>
     </Form>

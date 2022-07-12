@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 
 function BSTNavBar() {
   return (
-    <Navbar bg="secondary" variant="light">
+    <Navbar bg="white" variant="light" >
     <Container>
     
       <Link to  ="/">Home</Link> 
-      <Nav className="me-auto">
+      <Nav  className="me-auto">
        
         <Link to  = "/categoria/remera" >Remeras</Link> 
      

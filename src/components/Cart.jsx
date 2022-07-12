@@ -4,7 +4,7 @@ import { CartContext } from './Context/CartContext';
 import './StylesComponent.css/Cart.css';
 
 export default function Cart() {
-  const {cart, emptyCart, isInCart, addItem, deleteItem, getItemPrice, getItemQty, removeFromCart} = useContext(CartContext);
+  const {cart, emptyCart,  getItemPrice,  removeFromCart} = useContext(CartContext);
   const carritoVacio = cart.length === 0;
 
   return (

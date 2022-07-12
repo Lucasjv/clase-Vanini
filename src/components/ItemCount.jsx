@@ -1,7 +1,5 @@
 
 import React, { useState } from 'react'
-import Card from 'react-bootstrap/Card';
-import {Link} from 'react-router-dom';
 
 
 

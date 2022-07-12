@@ -38,3 +38,84 @@ table, th, td {
     margin-top: 30px;
     text-align: center;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+ 
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .Count {
+    display: flex;
+   justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .cart-item-img, .header-image {
+      display: none;
+    }    
+  }
+  
+  .empty-cart {
+      padding: 20px;
+  }
+  .cart-item {
+      width: 80%;
+  }
+  .cart-item-img, .cart-item-qty, .cart-item-price, .cart-item-remove, .cart-item-total {
+      width: 10%;
+      text-align: center;
+  }
+  .cart-item-img img {
+      max-width: 70px;
+      max-height: 70px;
+  }
+  .cart-item-title {
+      width: 50%;
+  }
+  table, th, td {
+      border: 1px solid #ccc;
+  }
+  thead {
+      text-align: center;
+  }
+  .cart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Montserrat, Arial, sans-serif;
+      color: #4e0144;
+  }
+  .cart-title {
+      font-family: 'Comfortaa', cursive;
+      font-size: 3rem;
+      color: #4e0144;
+      text-align: center;
+      font-weight: bold;
+      margin: 60px;
+  }

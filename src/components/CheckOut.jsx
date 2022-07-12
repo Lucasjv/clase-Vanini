@@ -1,5 +1,4 @@
 import React from 'react'
-import {addDoc, collection, getFirestore, doc, getDoc} from 'firebase/firestore';
 import {Link} from 'react-router-dom';
 
 
