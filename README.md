@@ -1,13 +1,15 @@
 Cómo correr este proyecto:
-Este proyecto se encuentra deployeado en Vercel, podés ingresar y probarlo en el siguiente link:
+Este proyecto se encuentra deployeado en FIREBASE, podés ingresar y probarlo en el siguiente link:
 
-https://react-davico-luz-d20.vercel.app/
+https://simpsontienda-f64da.web.app/
 
 Si preferís correrlo de manera local, seguí los siguientes pasos:
 
 Descargá el proyecto de este repositorio.
 Abrí el directorio del proyecto en tu editor de código favorito.
+
 Corré el comando npm start.
+
 Abrí http://localhost:3000 para verlo en tu navegador.
 
 
